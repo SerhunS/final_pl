@@ -1,0 +1,11 @@
+program ::= statement*
+statement ::= variableDeclaration | assignment | ifStatement | whileStatement | printStatement
+variableDeclaration ::= 'değişken' identifier ':' type ';'
+assignment ::= identifier '=' expression ';'
+ifStatement ::= 'eğer' '(' expression ')' '{' block '}' ('değilse' '{' block '}')?
+whileStatement ::= 'döngü' '(' expression ')' '{' block '}'
+printStatement ::= 'yazdır' expression ';'
+block ::= statement*
+expression ::= term (('+' | '-') term)*
+term ::= factor (('*' | '/') factor)*
+factor ::= number | identifier | '(' expression ')'
